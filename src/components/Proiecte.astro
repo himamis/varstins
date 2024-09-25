@@ -6,6 +6,11 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+import image1 from "../../public/images/1-256.jpg";
+import image2 from "../../public/images/2-256.jpg";
+import image3 from "../../public/images/3-256.jpg";
+import image4 from "../../public/images/4-256.jpg";
 ---
 
 <div id="proiecte" class="section is-medium">
@@ -16,7 +21,7 @@ const t = useTranslations(lang);
         <ProiecteEntry
           title={t("proiecte.p1.title")}
           location={t("proiecte.p1.location")}
-          image="images/1-256.jpg"
+          image={image1}
           color={colors["red"]}
         />
       </div>
@@ -24,7 +29,7 @@ const t = useTranslations(lang);
         <ProiecteEntry
           title={t("proiecte.p2.title")}
           location={t("proiecte.p2.location")}
-          image="images/2-256.jpg"
+          image={image2}
           color={colors["green"]}
         />
       </div>
@@ -32,7 +37,7 @@ const t = useTranslations(lang);
         <ProiecteEntry
           title={t("proiecte.p3.title")}
           location={t("proiecte.p3.location")}
-          image="images/3-256.jpg"
+          image={image3}
           color={colors["blue"]}
         />
       </div>
@@ -40,7 +45,7 @@ const t = useTranslations(lang);
         <ProiecteEntry
           title={t("proiecte.p4.title")}
           location={t("proiecte.p4.location")}
-          image="images/4-256.jpg"
+          image={image4}
           color={colors["yellow"]}
         />
       </div>

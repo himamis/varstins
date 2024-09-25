@@ -1,11 +1,18 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Image } from "astro:assets";
+import background from "../../public/images/oltottmesz.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="hero is-halfheight has-bg-img">
+<div class="hero is-halfheight has-background">
+  <Image
+    src={background}
+    alt="Background image"
+    class="hero-background is-transparent"
+  />
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title has-text-centered is-uppercase has-text-white is-size-1">
@@ -33,10 +40,15 @@ const t = useTranslations(lang);
 </div>
 
 <style>
-  .has-bg-img {
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/public/images/oltottmesz.jpg") center;
-    background-size: cover;
+  .hero.has-background {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-background {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
   }
 </style>

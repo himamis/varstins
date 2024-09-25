@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import purgecss from 'astro-purgecss';
+
 import playformCompress from '@playform/compress';
 
 import playformInline from '@playform/inline';
@@ -9,5 +11,5 @@ import playformInline from '@playform/inline';
 export default defineConfig({
   site: 'https://himamis.github.io',
   base: 'varstins',
-  integrations: [playformInline({}), playformCompress()]
+  integrations: [purgecss(), playformInline({}), playformCompress()]
 });

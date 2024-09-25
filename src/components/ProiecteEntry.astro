@@ -1,17 +1,19 @@
 ---
 interface Props {
-  image: string;
+  image: ImageMetadata;
   title: string;
   location: string;
   color: string;
 }
 
 const { image, title, location, color } = Astro.props;
+
+import { Image } from "astro:assets";
 ---
 
 <div>
   <figure class="image is-128x128 is-horizontal-center">
-    <img class="is-rounded" src={image} />
+    <Image class="is-rounded" src={image} alt="image" />
   </figure>
   <h4 class="title is-4 has-text-centered underlined-heading mt-4 mb-2">
     {title}

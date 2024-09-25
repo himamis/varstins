@@ -4,6 +4,11 @@ import colors from "../colors.json";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import aru from "../../public/images/aru-256.jpg";
+import dobozban from "../../public/images/dobozban-256.jpg";
+import dobozok from "../../public/images/dobozok-256.jpg";
+import oltottMesz from "../../public/images/oltott_mesz-256.jpg";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -17,7 +22,7 @@ const t = useTranslations(lang);
         <DespreNoiEntry
           title={t("despre.e1.title")}
           description={t("despre.e1.description")}
-          image="images/aru-256.jpg"
+          image={aru}
           color={colors["green"]}
         />
       </div>
@@ -25,7 +30,7 @@ const t = useTranslations(lang);
         <DespreNoiEntry
           title={t("despre.e2.title")}
           description={t("despre.e2.description")}
-          image="images/dobozban-256.jpg"
+          image={dobozban}
           color={colors["blue"]}
         />
       </div>
@@ -33,7 +38,7 @@ const t = useTranslations(lang);
         <DespreNoiEntry
           title={t("despre.e3.title")}
           description={t("despre.e3.description")}
-          image="images/dobozok-256.jpg"
+          image={dobozok}
           color={colors["yellow"]}
         />
       </div>
@@ -41,7 +46,7 @@ const t = useTranslations(lang);
         <DespreNoiEntry
           title={t("despre.e4.title")}
           description={t("despre.e4.description")}
-          image="images/oltott_mesz-256.jpg"
+          image={oltottMesz}
           color={colors["red"]}
         />
       </div>
