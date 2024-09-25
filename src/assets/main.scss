@@ -1,0 +1,29 @@
+@use "bulma/sass/utilities" with (
+    $family-primary: "Montserrat",
+    $dark: rgb(39, 39, 39),
+    $primary: #009440
+  );
+  @use "bulma/sass/components/navbar" with (
+    $navbar-item-img-max-height: 68px,
+    $navbar-height: 76px
+  );
+  @forward "bulma/sass/elements/button";
+  @forward "bulma/sass/elements/image";
+  @use "bulma/sass/elements/title" with (
+    $title-size: 3rem,
+    $title-weight: 700
+  );
+  @forward "bulma/sass/base";
+  @forward "bulma/sass/form";
+  @forward "bulma/sass/grid/columns";
+  @forward "bulma/sass/helpers/color";
+  @forward "bulma/sass/helpers/spacing";
+  @forward "bulma/sass/helpers/typography";
+  @forward "bulma/sass/helpers/visibility";
+  @use "bulma/sass/layout/container" with($container-max-width: 1170px);
+  @forward "bulma/sass/layout/footer";
+  @forward "bulma/sass/layout/hero";
+  @forward "bulma/sass/layout/section";
+  @forward "bulma/sass/themes";
+
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");

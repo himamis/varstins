@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@playform/compress": "^0.1.1",
+    "@playform/inline": "^0.1.0",
     "astro": "^4.15.9",
     "astro-purgecss": "^4.6.0",
     "bulma": "^1.0.2",
