@@ -12,7 +12,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "astro": "^4.15.9",
+    "astro-purgecss": "^4.6.0",
     "bulma": "^1.0.2",
+    "purgecss": "^6.0.0",
     "sass": "^1.79.3",
     "typescript": "^5.6.2"
   }

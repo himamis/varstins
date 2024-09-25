@@ -47,5 +47,10 @@ const { title, description, percent, color } = Astro.props;
     ctx.beginPath();
     ctx.arc(32, 32, 28, Math.PI + Math.PI/2, Math.PI + Math.PI/2 + Math.PI * 2 * (percent/100));
     ctx.stroke();
+
+    ctx.font = "bold 14px Montserrat";
+    ctx.fillStyle = "white"
+    const textSize = ctx.measureText(String(percent));
+    ctx.fillText(String(percent), (size- textSize.width) / 2, (size + textSize.actualBoundingBoxAscent) / 2);
   });
 </script>
