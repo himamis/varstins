@@ -3,6 +3,9 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+import { Image } from "astro:assets";
+import varalb from "../assets/images/varalb.png";
 ---
 <nav
   class="navbar has-text-weight-normal"
@@ -12,7 +15,7 @@ const t = useTranslations(lang);
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="images/varalb.png" />
+        <Image src={varalb} alt="Logo" height={68}/>
       </a>
 
       <a

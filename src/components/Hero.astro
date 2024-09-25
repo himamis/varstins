@@ -1,17 +1,18 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { Image } from "astro:assets";
-import background from "../../public/images/oltottmesz.jpg";
+import background from "../assets/images/oltottmesz2.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="hero is-halfheight has-background">
+<div class="hero is-halfheight has-background has-background-dark">
   <Image
     src={background}
+    loading="eager"
     alt="Background image"
-    class="hero-background is-transparent"
+    class="hero-background is-transparent is-hidden-mobile"
   />
   <div class="hero-body">
     <div class="container has-text-centered">
