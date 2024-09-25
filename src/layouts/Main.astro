@@ -1,0 +1,37 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import DespreNoi from "../components/DespreNoi.astro";
+import ObtinereaVarului from "../components/ObtinereaVarului.astro";
+import Proiecte from "../components/Proiecte.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<style lang="scss" is:global>
+  @use "bulma/sass" with (
+    $family-primary: "Montserrat",
+    $navbar-item-img-max-height: 3rem,
+    $container-max-width: 1170px,
+    $title-weight: 700,
+    $dark: rgb(39, 39, 39),
+    $title-size: 3rem,
+    $primary: #009440
+  );
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<Layout>
+  <Header />
+  <Hero />
+  <DespreNoi />
+  <ObtinereaVarului />
+  <Proiecte />
+  <Contact />
+  <Footer />
+</Layout>

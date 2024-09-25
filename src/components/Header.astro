@@ -1,0 +1,79 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<nav
+  class="navbar has-text-weight-bold"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="images/varalb.png" />
+      </a>
+
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarMenu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="navbarMenu">
+      <div class="navbar-end">
+        <a href="#despre-noi" class="navbar-item">{t("nav.despre")}</a>
+        <a href="#obtinerea" class="navbar-item">{t("nav.producerea")}</a>
+        <a href="#proiecte" class="navbar-item">{t("nav.proiecte")}</a>
+        <a href="#contact" class="navbar-item">{t("nav.contact")}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Get all "navbar-burger" elements
+  const navbarBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-burger"),
+    0
+  );
+
+  // Add a click event on each of them
+  navbarBurgers.forEach((el) => {
+    el.addEventListener("click", () => {
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle("is-active");
+      $target?.classList.toggle("is-active");
+    });
+  });
+
+  // Close hamburger when clicking on a navigator item
+  const navbarItems = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-item"),
+    0
+  );
+
+  navbarItems.forEach((it) => {
+    it.addEventListener("click", () => {
+      navbarBurgers.forEach((el) => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        el.classList.remove("is-active");
+        $target?.classList.remove("is-active");
+      });
+    });
+  });
+</script>

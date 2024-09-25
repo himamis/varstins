@@ -1,0 +1,49 @@
+---
+import ProiecteEntry from "./ProiecteEntry.astro";
+import colors from "../colors.json";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="proiecte" class="section is-medium">
+  <div class="container">
+    <h1 class="title has-text-centered is-uppercase">Proiecte</h1>
+    <div class="columns mt-6">
+      <div class="column">
+        <ProiecteEntry
+          title={t("proiecte.p1.title")}
+          location={t("proiecte.p1.location")}
+          image="images/1-256.jpg"
+          color={colors["red"]}
+        />
+      </div>
+      <div class="column">
+        <ProiecteEntry
+          title={t("proiecte.p2.title")}
+          location={t("proiecte.p2.location")}
+          image="images/2-256.jpg"
+          color={colors["green"]}
+        />
+      </div>
+      <div class="column">
+        <ProiecteEntry
+          title={t("proiecte.p3.title")}
+          location={t("proiecte.p3.location")}
+          image="images/3-256.jpg"
+          color={colors["blue"]}
+        />
+      </div>
+      <div class="column">
+        <ProiecteEntry
+          title={t("proiecte.p4.title")}
+          location={t("proiecte.p4.location")}
+          image="images/4-256.jpg"
+          color={colors["yellow"]}
+        />
+      </div>
+    </div>
+  </div>
+</div>

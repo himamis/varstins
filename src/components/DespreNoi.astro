@@ -1,0 +1,50 @@
+---
+import DespreNoiEntry from "../components/DespreNoiEntry.astro";
+import colors from "../colors.json";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="despre-noi" class="section is-medium">
+  <div class="container">
+    <h1 class="has-text-centered title is-uppercase">{t("despre.title")}</h1>
+    <h2 class="has-text-centered subtitle">{t("despre.subtitle")}</h2>
+    <div class="columns mt-6">
+      <div class="column">
+        <DespreNoiEntry
+          title={t("despre.e1.title")}
+          description={t("despre.e1.description")}
+          image="images/aru-256.jpg"
+          color={colors["green"]}
+        />
+      </div>
+      <div class="column">
+        <DespreNoiEntry
+          title={t("despre.e1.title")}
+          description={t("despre.e2.description")}
+          image="images/dobozban-256.jpg"
+          color={colors["blue"]}
+        />
+      </div>
+      <div class="column">
+        <DespreNoiEntry
+          title={t("despre.e1.title")}
+          description={t("despre.e3.description")}
+          image="images/dobozok-256.jpg"
+          color={colors["yellow"]}
+        />
+      </div>
+      <div class="column">
+        <DespreNoiEntry
+          title={t("despre.e1.title")}
+          description={t("despre.e4.description")}
+          image="images/oltott_mesz-256.jpg"
+          color={colors["red"]}
+        />
+      </div>
+    </div>
+  </div>
+</div>

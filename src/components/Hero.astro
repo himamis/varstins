@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="hero is-halfheight has-bg-img">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title has-text-centered is-uppercase has-text-white is-size-1">
+        {t("hero.bineativenit")}
+      </p>
+      <div class="is-hidden-tablet">
+        <a
+          class="button is-primary is-large is-fullwidth mb-2"
+          href="#despre-noi">{t("nav.despre")}</a
+        >
+        <a class="button is-link is-large is-fullwidth" href="#contact"
+          >{t("nav.contact")}</a
+        >
+      </div>
+      <div class="is-hidden-mobile">
+        <a class="button is-primary is-large mr-2" href="#despre-noi"
+          >{t("nav.despre")}</a
+        >
+        <a class="button is-link is-large ml-2" href="#contact"
+          >{t("nav.contact")}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .has-bg-img {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/public/images/oltottmesz.jpg") center;
+    background-size: cover;
+  }
+</style>

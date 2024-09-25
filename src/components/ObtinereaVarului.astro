@@ -1,0 +1,68 @@
+---
+import PercentComponent from "../components/PercentComponent.astro";
+import Column2 from "./ObtinereaVaruluiColumn2.astro"
+import colors from "../colors.json";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  id="obtinerea"
+  class="section has-background-dark has-text-light is-medium"
+>
+  <div class="container">
+    <h1 class="title has-text-centered is-uppercase has-text-light">
+      {t("obtinerea.title")}
+    </h1>
+    <h2 class="subtitle has-text-centered has-text-light">
+      {t("obtinerea.subtitle")}
+    </h2>
+    <div class="columns mt-6">
+      <div class="column">
+        <p class="is-size-1 has-text-right is-hidden-mobile">
+          {t("obtinerea.column1")}
+        </p>
+        <p class="is-size-3 has-text-centered is-hidden-tablet">
+          {t("obtinerea.column1")}
+        </p>
+      </div>
+      <div class="column">
+        <div class="is-hidden-mobile">
+          <Column2/>
+        </div>
+        <div class="is-hidden-tablet has-text-centered">
+          <Column2/>
+        </div>
+      </div>
+      <div class="column">
+        <PercentComponent
+          title={t("obtinerea.column3.skill1.title")}
+          description={t("obtinerea.column3.skill1.description")}
+          percent={97}
+          color={colors["red"]}
+        />
+        <PercentComponent
+          title={t("obtinerea.column3.skill2.title")}
+          description={t("obtinerea.column3.skill2.description")}
+          percent={98}
+          color={colors["green"]}
+        />
+        <PercentComponent
+          title={t("obtinerea.column3.skill3.title")}
+          description={t("obtinerea.column3.skill3.description")}
+          percent={94}
+          color={colors["blue"]}
+        />
+        <PercentComponent
+          title={t("obtinerea.column3.skill4.title")}
+          description={t("obtinerea.column3.skill4.description")}
+          percent={100}
+          color={colors["yellow"]}
+        />
+      </div>
+    </div>
+  </div>
+</div>

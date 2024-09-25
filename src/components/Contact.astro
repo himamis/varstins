@@ -1,0 +1,67 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="contact" class="section is-medium has-background-dark has-text-white">
+  <div class="container">
+    <h1 class="has-text-centered title is-uppercase has-text-white">
+      {t("contact.title")}
+    </h1>
+
+    <form class="mt-6" action="https://api.web3forms.com/submit" method="POST">
+      <input
+        type="hidden"
+        name="access_key"
+        value="3ba7ab87-8bcf-4601-8367-97249ac16fff"
+      />
+
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <label class="label has-text-white">{t("contact.name")}</label>
+            <div class="control">
+              <input class="input" type="text" name="name" required />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label has-text-white">{t("contact.email")}</label>
+            <div class="control">
+              <input class="input" type="email" name="email" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label has-text-white">{t("contact.message")}</label>
+        <div class="control">
+          <textarea class="textarea" name="message" required></textarea>
+        </div>
+      </div>
+
+      <!-- Honeypot Spam Protection -->
+      <input
+        type="checkbox"
+        name="botcheck"
+        class="hidden"
+        style="display: none;"
+      />
+
+      <!-- Custom Confirmation / Success Page -->
+      <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+      <div class="field is-grouped is-grouped-right">
+        <div class="control">
+          <button class="button is-primary" type="submit"
+            >{t("contact.send")}</button
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

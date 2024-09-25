@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="footer has-background-black">
+  <div class="container has-text-centered has-text-white">
+    <div class="columns">
+      <div class="column">
+        <p>{t("footer.adresa")}: Str. II.Rákóczi Ferenc Nr. 122 Odorheiu Secuisec</p>
+      </div>
+      <div class="column">
+        <span>Email: </span><a href="mailto: varalbsrl@gmail.com">varalbsrl@gmail.com</a>
+      </div>
+      <div class="column">
+        <span>Tel: </span><a href="tel:+40266218378">+4 0266 218 378</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  location: string;
+  color: string;
+}
+
+const { image, title, location, color } = Astro.props;
+---
+
+<div>
+  <figure class="image is-128x128 is-horizontal-center">
+    <img class="is-rounded" src={image} />
+  </figure>
+  <h4 class="title is-4 has-text-centered underlined-heading mt-4 mb-2">
+    {title}
+  </h4>
+  <p class="has-text-centered">{location}</p>
+</div>
+
+<style define:vars={{ color }}>
+  .underlined-heading {
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .underlined-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 75%;
+    height: 2px;
+    background-color: var(--color);
+    transform: translateX(-50%);
+  }
+  .is-horizontal-center {
+    margin: auto;
+  }
+</style>

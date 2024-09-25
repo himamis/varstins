@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  percent: number;
+  color: string;
+}
+
+const { title, description, percent, color } = Astro.props;
+---
+
+<div class="columns is-mobile">
+  <div class="column is-narrow ">
+    <canvas class="canvas" data-percent={percent} data-color={color}></canvas>
+  </div>
+  <div class="column">
+    <p class="is-uppercase has-text-weight-bold is-size-5">{title}</p>
+    <p class="is-size-6">{description}</p>
+  </div>
+</div>
+
+<style>
+  .canvas {
+    width: 64px;
+    height: 64px;
+  }
+</style>
+
+<script>
+  const canvases = Array.prototype.slice.call(
+    document.getElementsByClassName("canvas"),
+    0
+  );
+  canvases.forEach((canvas) => {
+    const percent = Number(canvas.dataset.percent);
+    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+    const scale = window.devicePixelRatio;
+    const size = 64;
+    canvas.width = Math.floor(size * scale);
+    canvas.height = Math.floor(size * scale);
+
+    ctx.scale(scale, scale);
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = canvas.dataset.color as string;
+
+    ctx.beginPath();
+    ctx.arc(32, 32, 28, Math.PI + Math.PI/2, Math.PI + Math.PI/2 + Math.PI * 2 * (percent/100));
+    ctx.stroke();
+  });
+</script>
