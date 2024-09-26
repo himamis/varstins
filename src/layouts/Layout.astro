@@ -1,14 +1,33 @@
+---
+import { AstroFont } from "astro-font";
+---
+
 <!doctype html>
 <html lang="en" data-theme="light">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Varalb - Natural, sănătos, ecologic</title>
-	</head>
-	<body >
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Varalb - Natural, sănătos, ecologic</title>
+    <AstroFont
+      config={[
+        {
+          src: [],
+          name: "Montserrat",
+          // Google Fonts URL
+          googleFontsURL:
+		    "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700&display=swap",
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
