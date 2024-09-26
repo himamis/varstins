@@ -9,11 +9,13 @@ import playformInline from '@playform/inline';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://himamis.github.io/varstins',
+  site: 'https://himamis.github.io',
+  base: 'varstins',
   integrations: [
     purgecss(), 
     playformInline({
     Critters: {
+      publicPath: "/varstins",
       logLevel: "info"
     }
   }), 
