@@ -1,41 +1,43 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { Image } from "astro:assets";
-import background from "../assets/images/oltottmesz2.jpg";
+import background from "../assets/images/hero3.jpg";
+import backgroundMobile from "../assets/images/hero_mobile.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="hero is-halfheight has-background has-background-dark">
+<div
+  class="hero is-halfheight has-background has-background-dark"
+  style="box-shadow: inset 0px 8px 5px -10px inset #ccc;"
+>
   <Image
     src={background}
     loading="eager"
     alt="Background image"
     class="hero-background is-transparent is-hidden-mobile"
   />
+  <Image
+    src={backgroundMobile}
+    loading="eager"
+    alt="Background image"
+    class="hero-background is-transparent is-hidden-tablet"
+  />
   <div class="hero-body">
+    <div class="container has-text-centered"></div>
+  </div>
+  <div class="hero-foot">
     <div class="container has-text-centered">
-      <p class="title has-text-centered is-uppercase has-text-white is-size-1">
-        {t("hero.bineativenit")}
-      </p>
-      <div class="is-hidden-tablet">
-        <a
-          class="button is-primary is-large is-fullwidth mb-2"
-          href="#despre-noi">{t("nav.despre")}</a
-        >
-        <a class="button is-link is-large is-fullwidth" href="#contact"
-          >{t("nav.contact")}</a
-        >
-      </div>
-      <div class="is-hidden-mobile">
-        <a class="button is-primary is-large mr-2" href="#despre-noi"
-          >{t("nav.despre")}</a
-        >
-        <a class="button is-link is-large ml-2" href="#contact"
-          >{t("nav.contact")}</a
-        >
-      </div>
+      <a class="button is-link is-large" href="#contact">{t("nav.contact")}</a>
+      <h1
+        class="title has-text-centered is-uppercase has-text-black is-size-1 text-outline mt-6 mb-2"
+      >
+        {t("welcome.title")}
+      </h1>
+      <h2 class="subtitle has-text-centered mb-3">
+        {t("welcome.subtitle")}
+      </h2>
     </div>
   </div>
 </div>

@@ -21,7 +21,9 @@
   @forward "bulma/sass/helpers/typography";
   @forward "bulma/sass/helpers/visibility";
   @use "bulma/sass/layout/container" with($container-max-width: 1170px);
-  @forward "bulma/sass/layout/footer";
+  @use "bulma/sass/layout/footer" with (
+    $footer-padding: 2rem 1.5rem 2rem
+  );
   @forward "bulma/sass/layout/hero";
   @forward "bulma/sass/layout/section";
   @forward "bulma/sass/themes";
