@@ -6,6 +6,9 @@ const t = useTranslations(lang);
 
 import { Image } from "astro:assets";
 import varalb from "../assets/images/logo.jpeg";
+
+const langSelector = lang == "hu" ? "🇷🇴 Română" : "🇭🇺 Magyar";
+const langPath = lang == "hu" ? "/" : "/hu/"
 ---
 <nav
   class="navbar has-text-weight-normal"
@@ -38,6 +41,7 @@ import varalb from "../assets/images/logo.jpeg";
         <a href="#obtinerea" class="navbar-item">{t("nav.producerea")}</a>
         <a href="#proiecte" class="navbar-item">{t("nav.proiecte")}</a>
         <a href="#contact" class="navbar-item">{t("nav.contact")}</a>
+        <a href={langPath} class="navbar-item">{langSelector}</a>
       </div>
     </div>
   </div>
