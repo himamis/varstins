@@ -7,6 +7,7 @@ export const defaultLang = "ro";
 
 export const ui = {
   ro: {
+    facebookpage: "Pagină de Facebook",
     "welcome.title": "Var pasta naturală de calitate superioară",
     "welcome.subtitle":
       "Natural. Sănătos. Ecologic. Alegerea ideală pentru un mediu sustenabil.",
@@ -76,6 +77,7 @@ export const ui = {
     "hero.bineativenit": "Bine ați venit pe pagina noastră!",
   },
   hu: {
+    facebookpage: "Facebook oldal",
     "welcome.title": "Var pasta naturală de calitate superioară",
     "welcome.subtitle":
       "Natural. Sănătos. Ecologic. Alegerea ideală pentru un mediu sustenabil.",

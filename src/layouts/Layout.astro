@@ -1,16 +1,48 @@
 ---
 import { AstroFont } from "astro-font";
+import { AstroSeo } from "@astrolib/seo";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
 <html lang="en" data-theme="light">
   <head>
+    <base href={import.meta.env.BASE_URL} />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg"
+      color="#0c7bec"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
-    <title>Varalb - Natural, sănătos, ecologic</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <AstroFont
       config={[
         {
@@ -18,13 +50,19 @@ import { AstroFont } from "astro-font";
           name: "Montserrat",
           // Google Fonts URL
           googleFontsURL:
-		    "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700&display=swap",
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700&display=swap",
           preload: true,
           display: "swap",
           selector: "body",
           fallback: "sans-serif",
         },
       ]}
+    />
+    <AstroSeo
+      title={"Varalb - " + t("despre.subtitle")}
+      description={t("welcome.title")}
+      canonical="https://www.varstins.ro"
+
     />
   </head>
   <body>

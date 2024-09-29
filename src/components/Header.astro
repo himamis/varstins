@@ -8,7 +8,7 @@ import { Image } from "astro:assets";
 import varalb from "../assets/images/logo.jpeg";
 
 const langSelector = lang == "hu" ? "🇷🇴 Română" : "🇭🇺 Magyar";
-const langPath = lang == "hu" ? "/" : "/hu/"
+const langPath = import.meta.env.BASE_URL + (lang == "hu" ? "" : "hu")
 ---
 <nav
   class="navbar has-text-weight-normal"
@@ -17,7 +17,7 @@ const langPath = lang == "hu" ? "/" : "/hu/"
 >
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href={import.meta.env.BASE_URL}>
         <Image src={varalb} alt="Logo" height={68}  densities={[1, 1.5, 2]}loading="eager"/>
       </a>
 
